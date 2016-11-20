@@ -1,0 +1,12 @@
+<template>
+  <div class="IntroScreen">
+    Welcome to shogi
+    <button v-on:click="dispatch('start_playing')">Play</button>
+  </div>
+</template>
+<script>
+  var template = document.currentScript.parentNode.querySelector("template");
+  Vue.component('shogi-intro-scene', {
+    template: template.innerHTML
+  })
+</script>

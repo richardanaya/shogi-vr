@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="styles/shogi-vr.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.22.1/ramda.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.23/webcomponents-lite.min.js"></script>
 <script src="https://unpkg.com/voir@latest/voir.js"></script>
@@ -17,9 +18,11 @@
   <a-entity light="type: ambient; color: #ccc"></a-entity>
   <a-entity light="type: point; intensity: 0.75; distance: 50; decay: 2" position="0 10 10"></a-entity>
   <a-entity id="scene">
+    <shogi-intro-scene v-if="state.board.isPlaying == false"></shogi-intro-scene>
     <shogi-board v-bind:board="state.board"></shogi-board>
   </a-entity>
 </a-scene>
+<link rel="import" href="components/shogi-intro-scene.html" >
 <link rel="import" href="components/shogi-board.html" >
 <link rel="import" href="components/shogi-piece.html" >
 <link rel="import" href="components/shogi-space.html" >

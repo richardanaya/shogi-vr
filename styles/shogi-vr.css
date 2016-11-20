@@ -1,0 +1,7 @@
+.IntroScreen {
+  background: rgba(255,255,255,.5);
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 999999999;
+}
