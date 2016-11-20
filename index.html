@@ -20,7 +20,9 @@
     <shogi-board v-bind:board="state.board"></shogi-board>
   </a-entity>
 </a-scene>
-<link rel="import" href="shogi-board.html" >
-<link rel="import" href="shogi-piece.html" >
-<link rel="import" href="shogi-space.html" >
-<link rel="import" href="app.html" >
+<link rel="import" href="components/shogi-board.html" >
+<link rel="import" href="components/shogi-piece.html" >
+<link rel="import" href="components/shogi-space.html" >
+<script src="mutators/board.js"></script>
+<script src="store.js"></script>
+<link rel="import" href="components/app.html" >

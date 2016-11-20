@@ -1,0 +1,10 @@
+<script>
+  Vue.use(Voir,{store:store});
+
+  new Vue({
+    el: '#scene',
+    data: {
+        state: store.state
+    }
+  })
+</script>
