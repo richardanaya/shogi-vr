@@ -15,10 +15,10 @@ function boardMutator(state,action,dispatch){
   }
   switch(action.type){
     case "route_changed":
-      debugger;
       if(data == ROUTE_GAME){
         board.isPlaying = true;
       }
+      return;
     case "start_playing":
       router.goTo(ROUTE_GAME);
       return;

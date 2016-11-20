@@ -6,7 +6,6 @@ var router = (function(){
   }
   page(ROUTE_ROOT, goToPage)
   page(ROUTE_GAME, goToPage)
-  page({hashbang:true})
   return {
     goTo: function(path){
       window.setTimeout(function(){
@@ -15,3 +14,4 @@ var router = (function(){
     }
   }
 }())
+page({hashbang:true})
