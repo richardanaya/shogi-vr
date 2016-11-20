@@ -5,10 +5,9 @@
   </a-collada-model>
 </template>
 <script>
-  var template = document.currentScript.parentNode.querySelector("template")
   Vue.component('shogi-board', {
     props: ['board'],
-    template: template.innerHTML,
+    template: document.currentScript.parentNode.querySelector("template").innerHTML,
     data: function(){
       var spaces = [];
       for(var x = 0; x < 9; x++){

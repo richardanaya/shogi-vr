@@ -5,8 +5,7 @@
   </div>
 </template>
 <script>
-  var template = document.currentScript.parentNode.querySelector("template");
   Vue.component('shogi-intro-scene', {
-    template: template.innerHTML
+    template: document.currentScript.parentNode.querySelector("template").innerHTML
   })
 </script>

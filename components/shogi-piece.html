@@ -2,10 +2,9 @@
   <a-collada-model src="#piece" v-bind:position="pos" v-on:click="clicked"></a-collada-model>
 </template>
 <script>
-  var template = document.currentScript.parentNode.querySelector("template");
   Vue.component('shogi-piece', {
     props: ['piece'],
-    template: template.innerHTML,
+    template: document.currentScript.parentNode.querySelector("template").innerHTML,
     computed: {
       pos () {
         var x = -2.05+this.piece.x*.512

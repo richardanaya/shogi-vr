@@ -2,10 +2,9 @@
   <a-box v-bind:position="pos" width="0.45" height="0.05" depth="0.45" v-on:click="clicked" material="color: red; opacity: 0"></a-box>
 </template>
 <script>
-  var template = document.currentScript.parentNode.querySelector("template");
   Vue.component('shogi-space', {
     props: ['space'],
-    template: template.innerHTML,
+    template:  document.currentScript.parentNode.querySelector("template").innerHTML,
     computed: {
       pos () {
         var x = -2.05+this.space.x*.512
