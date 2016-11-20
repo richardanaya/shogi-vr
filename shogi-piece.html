@@ -15,7 +15,7 @@
     },
     methods: {
       clicked: function(){
-        this.dispatch('piece_selected',{piece:this.piece})
+        this.dispatch('piece_selected',{x:this.piece.x,y:this.piece.y})
       }
     }
   })

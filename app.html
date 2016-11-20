@@ -1,14 +1,26 @@
 <script>
   var state = {
     board: {
+      selected_piece: null,
       pieces: [{x:0,y:0},{x:8,y:0},{x:0,y:8},{x:8,y:8},{x:4,y:4}]
     }
    };
   function shogiMutations(state,action,dispatch){
-    console.log(action)
+    var board = state.board;
+    var data = action.data;
     switch(action.type){
-        case "select":
-            return;
+        case "space_selected":
+          if(board.selected_piece != null){
+            var s_x = board.selected_piece.x;
+            var s_y = board.selected_piece.y;
+            var piece = R.find(function(a){return (a.x===s_x && a.y===s_y);})(board.pieces);
+            piece.x = data.x;
+            piece.y = data.y;
+          }          
+          return ;
+        case "piece_selected":
+          board.selected_piece = {x:data.x,y:data.y};
+          return
     }
   }
 

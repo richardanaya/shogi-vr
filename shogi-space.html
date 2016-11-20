@@ -15,7 +15,7 @@
     },
     methods: {
       clicked: function(){
-        this.dispatch('space_selected',{space:this.space})
+        this.dispatch('space_selected',{x:this.space.x,y:this.space.y})
       }
     }
   })
