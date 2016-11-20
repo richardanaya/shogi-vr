@@ -18,19 +18,27 @@ function boardMutator(state,action,dispatch){
       board.isPlaying = true;
       return;
     case "space_selected":
-      var piece = findSelected(board.pieces);
-      if(piece !== undefined){
-          piece.x = data.x;
-          piece.y = data.y;
-          piece.selected=false;
+      //make sure they aren't moving to occupied space
+      var piece = findPieceAtXY(board.pieces,data.x,data.y);
+      if(piece === undefined){
+        piece = findSelected(board.pieces);
+        if(piece !== undefined){
+            //move to new location
+            piece.x = data.x;
+            piece.y = data.y;
+            //unselect
+            piece.selected=false;
+        }
       }
       return ;
     case "piece_selected":
       var piece = findSelected(board.pieces);
+      //unselect existing piece
       if(piece !== undefined){
           piece.selected = false;
       }
       piece = findPieceAtXY(board.pieces,data.x,data.y);
+      //mark piece selected
       piece.selected = true;
       return
   }
