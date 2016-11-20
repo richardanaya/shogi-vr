@@ -1,8 +1,10 @@
 <template>
-  <a-collada-model src="#board">
-    <shogi-piece v-for="p in board.pieces" v-bind:piece="p"></shogi-piece>
-    <shogi-space v-for="s in spaces" v-bind:space="s"></shogi-space>
-  </a-collada-model>
+  <a-entity position="0 1.5 0" rotation="90 0 0">
+    <a-collada-model src="#board">
+      <shogi-piece v-for="p in board.pieces" v-bind:piece="p"></shogi-piece>
+      <shogi-space v-for="s in spaces" v-bind:space="s"></shogi-space>
+    </a-collada-model>
+  </a-entity>
 </template>
 <script>
   Vue.component('shogi-board', {

@@ -10,8 +10,8 @@
     <a-asset-item id="board" src="assets/board.dae"></a-asset-item>
     <a-asset-item id="piece" src="assets/piece.dae"></a-asset-item>
   </a-assets>
-  <a-entity position="0 0 5">
-    <a-camera fps-look-controls wasd-controls-enabled=true fov=60 near=0.1 far=10000>
+  <a-entity position="0 0 3">
+    <a-camera fps-look-controls wasd-controls="enabled: false" fov=60 near=0.1 far=10000>
       <a-cursor></a-cursor>
       <a-entity raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity>
     </a-camera>
