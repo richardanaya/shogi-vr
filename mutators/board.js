@@ -14,8 +14,13 @@ function boardMutator(state,action,dispatch){
     return R.find(function(a){return (a.x===x && a.y===y);})(pieces)
   }
   switch(action.type){
+    case "route_changed":
+      debugger;
+      if(data == ROUTE_GAME){
+        board.isPlaying = true;
+      }
     case "start_playing":
-      board.isPlaying = true;
+      router.goTo(ROUTE_GAME);
       return;
     case "space_selected":
       //make sure they aren't moving to occupied space
