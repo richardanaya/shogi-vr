@@ -1,10 +1,11 @@
 <script>
   var state = {
     board: {
-      offsetNumbers:[0,1,-1,2]
+      pieces: [{x:0,y:0},{x:8,y:0},{x:0,y:8},{x:8,y:8},{x:4,y:4}]
     }
    };
   function shogiMutations(state,action,dispatch){
+    console.log(action)
     switch(action.type){
         case "select":
             return;

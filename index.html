@@ -1,21 +1,26 @@
+<script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.22.1/ramda.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.23/webcomponents-lite.min.js"></script>
 <script src="https://unpkg.com/voir@latest/voir.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.3.2/aframe.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.7/vue.min.js"></script>
 <a-scene>
   <a-assets>
-    <!--<a-asset-item id="thing" src="thing.dae"></a-asset-item>-->
+    <a-asset-item id="board" src="assets/board.dae"></a-asset-item>
+    <a-asset-item id="piece" src="assets/piece.dae"></a-asset-item>
   </a-assets>
   <a-entity position="0 0 5">
     <a-camera wasd-controls-enabled=true fov=60 near=0.1 far=10000>
       <a-cursor></a-cursor>
-      <a-entity cursor raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity>
+      <a-entity raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity>
     </a-camera>
   </a-entity>
+  <a-entity light="type: ambient; color: #ccc"></a-entity>
+  <a-entity light="type: point; intensity: 0.75; distance: 50; decay: 2" position="0 10 10"></a-entity>
   <a-entity id="scene">
     <shogi-board v-bind:board="state.board"></shogi-board>
   </a-entity>
 </a-scene>
 <link rel="import" href="shogi-board.html" >
 <link rel="import" href="shogi-piece.html" >
+<link rel="import" href="shogi-space.html" >
 <link rel="import" href="app.html" >

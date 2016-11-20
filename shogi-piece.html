@@ -1,24 +1,21 @@
 <template>
-  <a-sphere radius=".5" v-bind:color="color" v-bind:position="pos" v-on:click="clicked"></a-sphere>
+  <a-collada-model src="#piece" v-bind:position="pos" v-on:click="clicked"></a-collada-model>
 </template>
 <script>
   var template = document.currentScript.parentNode.querySelector("template");
   Vue.component('shogi-piece', {
-    props: ['distance'],
+    props: ['piece'],
     template: template.innerHTML,
     computed: {
       pos () {
-        return `${this.distance} 0 -4`;
-      }
-    },
-    data: function(){
-      return {
-        color:"#EF2D5E"
+        var x = -2.05+this.piece.x*.512
+        var z = 2.05-this.piece.y*.512
+        return x+" .38 "+z;
       }
     },
     methods: {
       clicked: function(){
-        this.color="#00FF00"
+        this.dispatch('piece_selected',{piece:this.piece})
       }
     }
   })

@@ -1,10 +1,24 @@
 <template>
-  <a-box><shogi-piece v-for="n in board.offsetNumbers" v-bind:distance="n"></my-sphere></a-box>
+  <a-collada-model src="#board">
+    <shogi-piece v-for="p in board.pieces" v-bind:piece="p"></shogi-piece>
+    <shogi-space v-for="s in spaces" v-bind:space="s"></shogi-space>
+  </a-collada-model>
 </template>
 <script>
   var template = document.currentScript.parentNode.querySelector("template")
   Vue.component('shogi-board', {
     props: ['board'],
-    template: template.innerHTML
+    template: template.innerHTML,
+    data: function(){
+      var spaces = [];
+      for(var x = 0; x < 9; x++){
+        for(var y = 0; y < 9; y++){
+          spaces.push({x:x,y:y});
+        }
+      }
+      return {
+        spaces:spaces
+      };
+    }
   })
 </script>
