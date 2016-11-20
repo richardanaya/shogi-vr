@@ -22,6 +22,7 @@ function boardMutator(state,action,dispatch){
       if(piece !== undefined){
           piece.x = data.x;
           piece.y = data.y;
+          piece.selected=false;
       }
       return ;
     case "piece_selected":
