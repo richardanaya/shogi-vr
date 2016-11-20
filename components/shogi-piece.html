@@ -1,5 +1,7 @@
 <template>
-  <a-collada-model src="#piece" v-bind:position="pos" v-on:click="clicked"></a-collada-model>
+  <a-collada-model src="#piece" v-bind:position="pos" v-on:click="clicked">
+    <a-collada-model v-if="piece.selected" src="#piece_selection"></a-collada-model>
+  </a-collada-model>
 </template>
 <script>
   Vue.component('shogi-piece', {

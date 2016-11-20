@@ -2,7 +2,7 @@ function boardInitialState(){
   return {
     isPlaying: false,
     selected_piece: null,
-    pieces: [{x:0,y:0},{x:8,y:0},{x:0,y:8},{x:8,y:8},{x:4,y:4}]
+    pieces: [{x:0,y:0,selected:false},{x:8,y:0,selected:false},{x:0,y:8,selected:false},{x:8,y:8,selected:false},{x:4,y:4,selected:false}]
   }
 }
 
