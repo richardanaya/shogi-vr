@@ -1,5 +1,5 @@
 <template>
-  <a-collada-model src="#piece" v-bind:position="pos" v-on:click="clicked">
+  <a-collada-model src="#piece" v-bind:position="pos" v-bind:rotation="rot" v-on:click="clicked">
     <a-collada-model v-if="piece.selected" src="#piece_selection"></a-collada-model>
   </a-collada-model>
 </template>
@@ -12,6 +12,14 @@
         var x = -2.05+this.piece.x*.512
         var z = 2.05-this.piece.y*.512
         return x+" .38 "+z;
+      },
+      rot () {
+        if(this.piece.player === 0){
+            return "0 180 0";
+        }
+        else {
+          return "0 0 0";
+        }
       }
     },
     methods: {
