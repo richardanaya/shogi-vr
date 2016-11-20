@@ -1,0 +1,10 @@
+<template>
+  <a-box><shogi-piece v-for="n in board.offsetNumbers" v-bind:distance="n"></my-sphere></a-box>
+</template>
+<script>
+  var template = document.currentScript.parentNode.querySelector("template")
+  Vue.component('shogi-board', {
+    props: ['board'],
+    template: template.innerHTML
+  })
+</script>

@@ -1,0 +1,24 @@
+<script>
+  var state = {
+    board: {
+      offsetNumbers:[0,1,-1,2]
+    }
+   };
+  function shogiMutations(state,action,dispatch){
+    switch(action.type){
+        case "select":
+            return;
+    }
+  }
+
+  var store = Voir.createStore(state, [shogiMutations]);
+
+  Vue.use(Voir,{store:store});
+
+  new Vue({
+    el: '#scene',
+    data: {
+        state: store.state
+    }
+  })
+</script>
